@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>06/ Dashboard Pemilik</title>
+    <link rel="stylesheet" href="dashboard_pemilik.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- SIDEBAR (Kiri) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <h2>Laundry Kiloan</h2>
+                    <p>Aplikasi Manajemen Laundry Kiloan Sederhana</p>
+                </div>
+                
+                <nav class="menu-group">
+                    <span class="menu-label">PEMILIK</span>
+                    <ul>
+                        <li class="active"><a href="dashboard_pemilik.html">Dashboard</a></li>
+                        <li><a href="laporan_pemilik.html">Laporan</a></li>
+                        <li><a href="laporan_pemilik.html">Pengaturan</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="menu-label">Hak akses</span>
+                <p>Pantau usaha, lihat laporan, serta kelola tarif dan akun petugas.</p>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA (Kanan) -->
+        <main class="main-content">
+            <!-- Header Atas -->
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>06/ Dashboard Pemilik</h1>
+                    <p class="date-text">Ringkasan usaha Senin, 19 Oktober 2026 · Data sampai pukul 11.00</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-black-header" type="button">Lihat laporan</button>
+                </div>
+            </header>
+
+            <!-- KARTU STATISTIK ATAS (4 Kotak Sejajar) -->
+            <section class="stats-grid-four">
+                <div class="stat-card">
+                    <span class="card-label">Pendapatan diterima</span>
+                    <div class="card-value">Rp176.000</div>
+                    <span class="card-hint">4 pembayaran lunas hari ini</span>
+                </div>
+                <div class="stat-card">
+                    <span class="card-label">Pesanan masuk</span>
+                    <div class="card-value">6</div>
+                    <span class="card-hint">Total berat 26 kg</span>
+                </div>
+                <div class="stat-card">
+                    <span class="card-label">Pekerjaan aktif</span>
+                    <div class="card-value">5</div>
+                    <span class="card-hint">Termasuk 1 siap diambil</span>
+                </div>
+                <div class="stat-card">
+                    <span class="card-label">Pesanan selesai</span>
+                    <div class="card-value">1</div>
+                    <span class="card-hint">Sudah diambil dan lunas</span>
+                </div>
+            </section>
+
+            <!-- AREA TENGAH (Dua Kolom Berdampingan Sama Panjang) -->
+            <div class="middle-grid-layout">
+                
+                <!-- Kotak Kiri: Ringkasan Keuangan -->
+                <div class="info-panel-box">
+                    <h3>Ringkasan keuangan</h3>
+                    <p class="panel-subtitle">Pendapatan dihitung dari pembayaran yang diterima, bukan seluruh tagihan.</p>
+                    
+                    <table class="financial-mini-table">
+                        <tr>
+                            <td>Total tagihan 6 pesanan</td>
+                            <td class="text-right">Rp232.000</td>
+                        </tr>
+                        <tr>
+                            <td>Sudah diterima</td>
+                            <td class="text-right font-semibold">Rp176.000</td>
+                        </tr>
+                        <tr>
+                            <td>Belum dibayar · 2 pesanan</td>
+                            <td class="text-right">Rp56.000</td>
+                        </tr>
+                    </table>
+
+                    <div class="payment-methods-subgrid">
+                        <div class="method-card">
+                            <span class="method-label">Tunai · 2 pembayaran</span>
+                            <div class="method-value">Rp80.000</div>
+                        </div>
+                        <div class="method-card">
+                            <span class="method-label">Transfer · 2 pembayaran</span>
+                            <div class="method-value">Rp96.000</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kotak Kanan: Posisi Pekerjaan -->
+                <div class="info-panel-box">
+                    <h3>Posisi pekerjaan</h3>
+                    <p class="panel-subtitle">Pemilik dapat memantau; pembaruan proses dilakukan Petugas Laundry.</p>
+                    
+                    <div class="job-positions-list">
+                        <div class="job-item">
+                            <span>Diterima</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="job-item">
+                            <span>Disetrika</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="job-item">
+                            <span>Dicuci</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="job-item">
+                            <span>Siap Diambil</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="job-item">
+                            <span>Dikeringkan</span>
+                            <strong>1</strong>
+                        </div>
+                        <div class="job-item">
+                            <span>Selesai</span>
+                            <strong>1</strong>
+                        </div>
+                    </div>
+
+                    <div class="alert-info-banner">
+                        <p>5 pesanan aktif dari 6 pesanan masuk. Tidak ada pesanan yang melewati estimasi selesai.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- AREA BAWAH: Ringkasan Pesanan per Layanan -->
+            <section class="bottom-table-section">
+                <h3>Ringkasan pesanan per layanan</h3>
+                <p class="panel-subtitle">Tagihan berdasarkan pesanan yang diterima pada 19 Oktober 2026.</p>
+                
+                <table class="service-summary-table">
+                    <thead>
+                        <tr>
+                            <th>Layanan</th>
+                            <th>Jumlah pesanan</th>
+                            <th>Berat</th>
+                            <th class="text-right">Total tagihan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cuci reguler</td>
+                            <td>3</td>
+                            <td>13 kg</td>
+                            <td class="text-right">Rp104.000</td>
+                        </tr>
+                        <tr>
+                            <td>Cuci ekspres</td>
+                            <td>2</td>
+                            <td>9 kg</td>
+                            <td class="text-right">Rp108.000</td>
+                        </tr>
+                        <tr>
+                            <td>Setrika saja</td>
+                            <td>1</td>
+                            <td>4 kg</td>
+                            <td class="text-right">Rp20.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="table-action-footer">
+                    <span class="total-summary-text">Total: 6 pesanan 26 kg · Rp232.000</span>
+                    <button class="btn-outline-bottom" type="button">Buka laporan lengkap</button>
+                </div>
+            </section>
+
+            <!-- Footer Halaman -->
+            <footer class="page-footer">
+                <span>Wireframe operasional · Tampilan statis</span>
+                <span>Data contoh: 19 Oktober 2026</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="dashboard_pemilik.js"></script>
+</body>
+</html>

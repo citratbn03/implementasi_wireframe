@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03/ Pesanan Baru</title>
+    <link rel="stylesheet" href="pesanan_baru.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- SIDEBAR (Kiri) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <h2>Laundry Kiloan</h2>
+                    <p>Aplikasi Manajemen Laundry Kiloan Sederhana</p>
+                </div>
+                
+                <nav class="menu-group">
+                    <span class="menu-label">PETUGAS LAUNDRY</span>
+                    <ul>
+                        <li><a href="dashboard_petugas.html">Dashboard</a></li>
+                        <li class="active"><a href="pesanan_baru.html">Pesanan baru</a></li>
+                        <li><a href="daftar_pesanan.html">Daftar pesanan</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="menu-label">Hak akses</span>
+                <p>Catat pesanan, perbarui proses, terima pembayaran, dan cetak nota.</p>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA (Kanan) -->
+        <main class="main-content">
+            <!-- Header Atas -->
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>03/ Pesanan Baru</h1>
+                    <p class="date-text">Draf LD-027. 19 Oktober 2026, 11.00 - Belum masuk ke ringkasan atau laporan.</p>
+                </div>
+                <div class="user-profile">
+                    <span class="user-name">Nadia (Petugas Laundry)</span>
+                    <button class="btn-logout" type="button" onclick="window.location.href='index.html'">Keluar</button>
+                </div>
+            </header>
+
+            <!-- FORM LAYOUT UTAMA -->
+            <form id="orderForm" class="order-form-layout">
+                
+                <!-- KOLOM KIRI (FORM INPUT) -->
+                <div class="form-inputs-column">
+                    
+                    <!-- 1. Data Pelanggan -->
+                    <div class="form-section">
+                        <h3>Data pelanggan</h3>
+                        <p class="section-desc">Isi data pelanggan yang menyerahkan cucian. Tanda * wajib diisi.</p>
+                        
+                        <div class="form-row-two">
+                            <div class="input-group">
+                                <label>Nama pelanggan *</label>
+                                <input type="text" value="Dian Puspita" required>
+                            </div>
+                            <div class="input-group">
+                                <label>Nomor telepon *</label>
+                                <input type="text" value="0812 3456 7890" required>
+                            </div>
+                        </div>
+                        
+                        <div class="input-group">
+                            <label>Alamat / catatan pelanggan</label>
+                            <input type="text" value="Jl. Melati No. 12">
+                        </div>
+                    </div>
+
+                    <!-- 2. Rincian Laundry -->
+                    <div class="form-section">
+                        <h3>Rincian laundry</h3>
+                        
+                        <div class="form-row-two">
+                            <div class="input-group">
+                                <label>Berat cucian (kg) *</label>
+                                <input type="text" id="beratCucian" value="4,5" required>
+                                <span class="input-hint">Gunakan hasil timbang; minimal 1 kg.</span>
+                            </div>
+                            <div class="input-group">
+                                <label>Layanan *</label>
+                                <select id="layanan" required>
+                                    <option value="Cuci reguler" selected>Cuci reguler</option>
+                                    <option value="Cuci ekspres">Cuci ekspres</option>
+                                </select>
+                                <span class="input-hint">Cuci, kering, dan setrika | 2 hari</span>
+                            </div>
+                        </div>
+
+                        <div class="form-row-two">
+                            <div class="input-group">
+                                <label>Tarif per kg</label>
+                                <input type="text" id="tarifPerKg" value="Rp8.000" disabled class="bg-disabled">
+                                <span class="input-hint">Tarif dikelola oleh Pemilik.</span>
+                            </div>
+                            <div class="input-group">
+                                <label>Estimasi selesai *</label>
+                                <input type="text" value="21 Oktober 2026, 11.00">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label>Catatan cucian</label>
+                            <input type="text" value="Pisahkan pakaian putih.">
+                        </div>
+                    </div>
+
+                    <!-- 3. Pembayaran Awal -->
+                    <div class="form-section">
+                        <h3>Pembayaran awal</h3>
+                        
+                        <div class="form-row-two">
+                            <div class="input-group">
+                                <label>Status pembayaran *</label>
+                                <select id="statusPembayaran" required>
+                                    <option value="Belum lunas" selected>Belum lunas</option>
+                                    <option value="Lunas">Lunas</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <label>Nominal diterima</label>
+                                <input type="text" id="nominalDiterima" value="Rp0">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row-two">
+                            <div class="input-group">
+                                <label>Metode pembayaran</label>
+                                <select id="metodePembayaran" disabled class="bg-disabled">
+                                    <option value="Belum ada pembayaran" selected>Belum ada pembayaran</option>
+                                    <option value="Tunai">Tunai</option>
+                                    <option value="Transfer">Transfer</option>
+                                </select>
+                            </div>
+                            <div class="input-hint-box">
+                                <p>Jika ada pembayaran, pilih Tunai atau Transfer dan isi nominalnya.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- KOLOM KANAN (RINGKASAN & AKSI TOMBOL) -->
+                <div class="form-summary-column">
+                    
+                    <!-- Panel Ringkasan Harga -->
+                    <div class="summary-panel">
+                        <h3>Ringkasan pesanan</h3>
+                        
+                        <table class="summary-table">
+                            <tr>
+                                <td>Nomor pesanan</td>
+                                <td class="text-right"><strong>LD-027 (draf)</strong></td>
+                            </tr>
+                            <tr>
+                                <td colspan="2"><span class="badge-status">Status awal: Diterima</span></td>
+                            </tr>
+                            <tr>
+                                <td>Layanan</td>
+                                <td class="text-right" id="ringkasanLayanan">Cuci reguler</td>
+                            </tr>
+                            <tr>
+                                <td>Perhitungan</td>
+                                <td class="text-right" id="ringkasanPerhitungan">4,5 kg x Rp8.000</td>
+                            </tr>
+                            <tr>
+                                <td>Subtotal</td>
+                                <td class="text-right" id="ringkasanSubtotal">Rp36.000</td>
+                            </tr>
+                            <tr>
+                                <td>Biaya tambahan</td>
+                                <td class="text-right">Rp0</td>
+                            </tr>
+                            <tr class="total-row">
+                                <td>Total biaya</td>
+                                <td class="text-right" id="ringkasanTotal">Rp36.000</td>
+                            </tr>
+                            <tr>
+                                <td>Sudah dibayar</td>
+                                <td class="text-right" id="ringkasanDibayar">Rp0</td>
+                            </tr>
+                            <tr>
+                                <td>Sisa tagihan</td>
+                                <td class="text-right" id="ringkasanSisa">Rp36.000</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <!-- Panel Info & Tombol Aksi -->
+                    <div class="action-panel">
+                        <p class="action-notice">
+                            Total dihitung dari berat x tarif. Setelah disimpan, pesanan berstatus Diterima dan nota dapat dicetak dari detail pesanan.
+                        </p>
+                        <button type="submit" class="btn-primary">Simpan pesanan</button>

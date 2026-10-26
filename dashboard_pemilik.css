@@ -1,0 +1,344 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR STYLE --- */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #eef2f5;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.brand h2 {
+    font-size: 20px;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.brand p {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.menu-group {
+    margin-top: 40px;
+}
+
+.menu-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.menu-group ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-group li {
+    margin-bottom: 8px;
+}
+
+.menu-group a {
+    display: block;
+    padding: 10px 12px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.menu-group li.active a {
+    background-color: #f0f4f8;
+    color: #2b6cb0;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    border-top: 1px solid #eef2f5;
+    padding-top: 15px;
+}
+
+.sidebar-footer p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+/* --- KONTEN UTAMA KANAN --- */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eef2f5;
+    padding-bottom: 20px;
+}
+
+.main-header h1 {
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.date-text {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.btn-black-header {
+    padding: 10px 18px;
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- KARTU STATISTIK EM-GRID (4 KOTAK SEJAJAR) --- */
+.stats-grid-four {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-label {
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.card-value {
+    font-size: 26px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 8px;
+}
+
+.card-hint {
+    font-size: 11px;
+    color: #666;
+}
+
+/* --- AREA TENGAH (DENGAN TATA LETAK SEJAJAR PANJANG) --- */
+.middle-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.info-panel-box {
+    background: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.info-panel-box h3,
+.bottom-table-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #1a1a1a;
+}
+
+.panel-subtitle {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Tabel Keuangan Kiri */
+.financial-mini-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.financial-mini-table td {
+    padding: 10px 0;
+    color: #333;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Sub-grid Cara Pembayaran */
+.payment-methods-subgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    border-top: 1px solid #333333;
+    padding-top: 15px;
+    margin-top: auto; /* Memaksa kotak menempel rata di bawah */
+}
+
+.method-card {
+    background: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 12px;
+}
+
+.method-label {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.method-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* Posisi Kerja Kanan */
+.job-positions-list {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    column-gap: 30px;
+    row-gap: 10px;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.job-item {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px dashed #cccccc;
+    padding-bottom: 4px;
+}
+
+.alert-info-banner {
+    border: 1px solid #333333;
+    background-color: #ffffff;
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    margin-top: auto; /* Memaksa kotak menempel rata di bawah */
+}
+
+/* --- AREA TABEL BAWAH --- */
+.bottom-table-section {
+    background: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.service-summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.service-summary-table th,
+.service-summary-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #333333;
+}
+
+.service-summary-table th {
+    background-color: #ffffff;
+    font-weight: 600;
+}
+
+.table-action-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+}
+
+.total-summary-text {
+    font-size: 13px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.btn-outline-bottom {
+    padding: 8px 16px;
+    background: #ffffff;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* --- FOOTER --- */
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #888;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #eef2f5;
+}
+
+/* Responsif Layar Kecil */
+@media (max-width: 1024px) {
+    .stats-grid-four { grid-template-columns: repeat(2, 1fr); }
+    .middle-grid-layout { grid-template-columns: 1fr; }
+    .main-content { margin-left: 0; padding: 20px; }
+    .sidebar { position: relative; height: auto; width: 100%; }
+}

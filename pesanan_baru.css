@@ -1,0 +1,337 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR STYLE (DIUBAH AGAR SAMA PERSIS DENGAN DASHBOARD) --- */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #eef2f5;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: fixed;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+}
+
+.brand h2 {
+    font-size: 20px;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.brand p {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.menu-group {
+    margin-top: 40px;
+}
+
+.menu-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* PERBAIKAN: Menghilangkan padding bawaan browser agar tulisan tidak menjorok ke kanan */
+.menu-group ul {
+    list-style: none;
+    padding: 0; 
+    margin: 0;
+}
+
+.menu-group li {
+    margin-bottom: 8px;
+}
+
+.menu-group a {
+    display: block;
+    padding: 10px 12px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.menu-group li.active a, .menu-group a:hover {
+    background-color: #f0f4f8;
+    color: #2b6cb0;
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    border-top: 1px solid #eef2f5;
+    padding-top: 15px;
+}
+
+.sidebar-footer p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+/* --- KONTEN UTAMA KANAN --- */
+.main-content {
+    flex: 1;
+    margin-left: 260px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eef2f5;
+    padding-bottom: 20px;
+}
+
+.main-header h1 {
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.date-text {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-logout {
+    padding: 6px 12px;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-logout:hover {
+    background-color: #f5f5f5;
+}
+
+/* --- TATA LETAK FORM (2 KOLOM INDEPENDEN) --- */
+.order-form-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.form-inputs-column {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-section {
+    background: #fff;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.form-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+}
+
+.section-desc {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-row-two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.input-group {
+    margin-bottom: 18px;
+    width: 100%;
+}
+
+.input-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #333;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    font-size: 13px;
+    outline: none;
+    background-color: #fff;
+}
+
+.bg-disabled {
+    background-color: #f7fafc !important;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.input-hint {
+    display: block;
+    font-size: 11px;
+    color: #666;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+
+.input-hint-box {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    color: #666;
+    padding-top: 10px;
+    line-height: 1.4;
+}
+
+/* KOLOM KANAN (RINGKASAN & TOMBOL) */
+.form-summary-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.summary-panel, 
+.action-panel {
+    background: #fff;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    padding: 24px;
+}
+
+.summary-panel h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.badge-status {
+    display: inline-block;
+    border: 1px solid #333333;
+    padding: 4px 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: #fafafa;
+}
+
+.summary-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.summary-table td {
+    padding: 10px 0;
+    color: #333;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.summary-table tr.total-row td {
+    border-top: 1px solid #333333;
+    border-bottom: 1px solid #333333;
+    padding: 14px 0;
+    font-size: 15px;
+    color: #000;
+}
+
+.action-notice {
+    font-size: 12px;
+    color: #444;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #000000;
+    color: #fff;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+
+.btn-cancel {
+    width: 100%;
+    padding: 12px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333333;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #888;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #eef2f5;
+}
+
+@media (max-width: 992px) {
+    .order-form-layout { grid-template-columns: 1fr; }
+    .main-content { margin-left: 0; padding: 20px; }
+    .sidebar { position: relative; height: auto; width: 100%; }
+}

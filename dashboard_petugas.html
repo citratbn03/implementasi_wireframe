@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Petugas - Laundry Kiloan</title>
+    <link rel="stylesheet" href="dashboard_putagas.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- SIDEBAR (Kiri) -->
+        <aside class="sidebar">
+            <div class="brand">
+                <h2>Laundry Kiloan</h2>
+                <p>Aplikasi Manajemen Laundry Kiloan Sederhana</p>
+            </div>
+            
+            <nav class="menu-group">
+                <span class="menu-label">PETUGAS LAUNDRY</span>
+                <ul>
+                    <!-- TAUTAN MENU NAVIGASI -->
+                    <li class="active"><a href="dashboard_petugas.html">Dashboard</a></li>
+                    <li><a href="pesanan_baru.html">Pesanan baru</a></li>
+                    <li><a href="daftar_pesanan.html">Daftar pesanan</a></li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <span class="menu-label">Hak akses</span>
+                <p>Catat pesanan, perbarui proses, terima pembayaran, dan cetak nota.</p>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA (Kanan) -->
+        <main class="main-content">
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>02/ Dashboard Petugas</h1>
+                    <p class="date-text">Senin, 19 Oktober 2026. Selamat bekerja, Nadia.</p>
+                </div>
+                <div class="user-profile">
+                    <span class="user-name">Nadia (Petugas Laundry)</span>
+                    <button class="btn-logout" onclick="window.location.href='index.html'">Keluar</button>
+                </div>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <h3>Pesanan masuk hari ini</h3>
+                    <div class="stat-value">6</div>
+                    <p class="stat-sub">Total berat 20 kg</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Pesanan aktif</h3>
+                    <div class="stat-value">5</div>
+                    <p class="stat-sub">Diterima sampai siap diambil</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Siap diambil</h3>
+                    <div class="stat-value">1</div>
+                    <p class="stat-sub">Dewi Lestari | LD-022</p>
+                </div>
+                <div class="stat-card alert-card">
+                    <h3>Belum lunas</h3>
+                    <div class="stat-value">2</div>
+                    <p class="stat-sub">Sisa tagihan Rp56.000</p>
+                </div>
+            </section>
+
+            <div class="content-layout">
+                <div class="table-container full-width">
+                    <div class="table-header">
+                        <h2>Pesanan terbaru</h2>
+                        <p>Pesanan masuk hari ini, diurutkan dari waktu pemesanan terbaru.</p>
+                    </div>
+                    
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>No. pesanan</th>
+                                <th>Pelanggan</th>
+                                <th>Layanan</th>
+                                <th>Kg</th>
+                                <th>Total</th>
+                                <th>Status proses</th>
+                                <th>Pembayaran</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LD-026</td>
+                                <td>Siti Aminah</td>
+                                <td>Cuci reguler</td>
+                                <td>4</td>
+                                <td>Rp32.000</td>
+                                <td><span class="badge diterima">Diterima</span></td>
+                                <td><span class="badge belum">Belum lunas</span></td>
+                                <td><button class="btn-detail">Detail</button></td>
+                            </tr>
+                            <tr>
+                                <td>LD-025</td>
+                                <td>Budi Santoso</td>
+                                <td>Cuci ekspres</td>
+                                <td>5</td>
+                                <td>Rp50.000</td>
+                                <td><span class="badge dicuci">Dicuci</span></td>
+                                <td><span class="badge lunas">Lunas</span></td>
+                                <td><button class="btn-detail">Detail</button></td>
+                            </tr>
+                            <tr>
+                                <td>LD-024</td>
+                                <td>Risa Putri</td>
+                                <td>Cuci reguler</td>
+                                <td>3</td>
+                                <td>Rp24.000</td>
+                                <td><span class="badge dikeringkan">Dikeringkan</span></td>
+                                <td><span class="badge belum">Belum lunas</span></td>
+                                <td><button class="btn-detail">Detail</button></td>
+                            </tr>
+                            <tr>
+                                <td>LD-023</td>
+                                <td>Andi Wijaya</td>
+                                <td>Cuci reguler</td>
+                                <td>6</td>
+                                <td>Rp48.000</td>
+                                <td><span class="badge disetrika">Disetrika</span></td>
+                                <td><span class="badge lunas">Lunas</span></td>
+                                <td><button class="btn-detail">Detail</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    
+                    <div class="table-footer">
+                        <span class="showing-text">Menampilkan 4 dari 6 pesanan hari ini</span>
+                        <button class="btn-secondary">Lihat semua pesanan</button>
+                    </div>
+                </div>
+
+                <div class="bottom-panels-row">
+                    <div class="panel-card flex-1">
+                        <h3>Perlu ditindaklanjuti</h3>
+                        <p class="panel-desc">Buka detail pesanan untuk memperbarui proses atau mencatat pembayaran.</p>
+                        <div class="action-list">
+                            <div class="action-item">
+                                <span class="action-label">Siap diambil</span>
+                                <div class="action-details">
+                                    <p>Tagihan Rina <strong>LD-024</strong></p>
+                                    <span class="price-tag">Rp24.000</span>
+                                </div>
+                            </div>
+                            <div class="action-item">
+                                <div class="action-details">
+                                    <p>Tagihan Siti <strong>LD-026</strong></p>
+                                    <span class="price-tag">Rp32.000</span>
+                                </div>
+                                <p class="total-alert">LD-022 | Dewi Lestari <strong>Rp24.000</strong></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-card flex-1">
+                        <h3>Ringkasan alur pekerjaan</h3>
+                        <p class="panel-desc">Jumlah pesanan pada setiap status saat ini.</p>
+                        <ul class="summary-list">
+                            <li><span>Diterima</span> <strong>1</strong></li>
+                            <li><span>Dicuci</span> <strong>1</strong></li>
+                            <li><span>Dikeringkan</span> <strong>1</strong></li>
+                            <li><span>Disetrika</span> <strong>1</strong></li>
+                            <li><span>Siap Diambil</span> <strong>1</strong></li>
+                            <li class="total-row"><span>5 pesanan aktif / 1 pesanan selesai hari ini</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

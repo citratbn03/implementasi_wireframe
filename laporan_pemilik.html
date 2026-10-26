@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>07/ Laporan Pemilik</title>
+    <link rel="stylesheet" href="laporan_pemilik.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- SIDEBAR (Kiri) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <h2>Laundry Kiloan</h2>
+                    <p>Aplikasi Manajemen Laundry Kiloan Sederhana</p>
+                </div>
+                
+                <nav class="menu-group">
+                    <span class="menu-label">PEMILIK</span>
+                    <ul>
+                        <li><a href="dashboard_pemilik.html">Dashboard</a></li>
+                        <li class="active"><a href="laporan_pemilik.html">Laporan</a></li>
+                        <li><a href="pengaturan_pemilik.html">Pengaturan</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="menu-label">Hak akses</span>
+                <p>Pantau usaha, lihat laporan, serta kelola tarif dan akun petugas.</p>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA (Kanan) -->
+        <main class="main-content">
+            <!-- Header Atas -->
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>07/ Laporan Pemilik</h1>
+                    <p class="date-text">Laporan penerimaan dan ringkasan pesanan. Periode 19 Oktober 2026.</p>
+                </div>
+                <div class="header-actions">
+                    <span class="user-name">Ibu Maya (Pemilik)</span>
+                    <button class="btn-logout" type="button" onclick="window.location.href='index.html'">Keluar</button>
+                    <button class="btn-black-header" type="button" id="btnCetakLaporan">Cetak laporan</button>
+                </div>
+            </header>
+
+            <!-- SECTION 1: FILTER PERIODE (KOTAK BERGARIS HITAM TEGAS) -->
+            <section class="form-section">
+                <h3>Filter periode</h3>
+                <p class="section-desc">Pemasukan mengikuti tanggal pembayaran; jumlah pesanan mengikuti tanggal masuk.</p>
+                
+                <form id="filterForm" class="filter-action-form">
+                    <div class="form-row-inputs">
+                        <div class="input-group">
+                            <label>Tanggal mulai</label>
+                            <input type="text" value="19 Oktober 2026" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Tanggal akhir</label>
+                            <input type="text" value="19 Oktober 2026" required>
+                        </div>
+                    </div>
+                    <div class="form-row-buttons">
+                        <button type="submit" class="btn-black-submit">Tampilkan</button>
+                        <button type="button" class="btn-outline-action">Atur ulang</button>
+                    </div>
+                </form>
+            </section>
+
+            <!-- SECTION 2: 3 KOTAK INFORMASI BESAR (HORIZONTAL SEJAJAR) -->
+            <section class="stats-row-three">
+                <div class="stat-box">
+                    <span class="stat-label">Total pemasukan</span>
+                    <div class="stat-number">Rp176.000</div>
+                    <span class="stat-hint">Tunai Rp80.000 + Transfer Rp96.000</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Total tagihan</span>
+                    <div class="stat-number">Rp232.000</div>
+                    <span class="stat-hint">6 pesanan diterima dalam periode</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">Sisa tagihan</span>
+                    <div class="stat-number">Rp56.000</div>
+                    <span class="stat-hint">2 pesanan belum lunas</span>
+                </div>
+            </section>
+
+            <!-- SECTION 3: TABEL TRANSAKSI DAN PEMBAYARAN (MEMANJANG PENUH KE KANAN) -->
+            <section class="form-section table-wrapper">
+                <h3>Transaksi dan pembayaran</h3>
+                <p class="section-desc text-margin-bottom">Semua pesanan masuk dan pembayaran pada 19 Oktober 2026. Nilai Rp0 belum dihitung sebagai pemasukan.</p>
+                
+                <table class="report-data-table">
+                    <thead>
+                        <tr>
+                            <th>No. pesanan</th>
+                            <th>Pelanggan</th>
+                            <th>Waktu bayar</th>
+                            <th>Tagihan</th>
+                            <th>Diterima</th>
+                            <th>Metode</th>
+                            <th>Pembayaran</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>LD-026</td>
+                            <td>Siti Aminah</td>
+                            <td></td>
+                            <td>Rp32.000</td>
+                            <td>Rp0</td>
+                            <td></td>
+                            <td>Belum lunas</td>
+                        </tr>
+                        <tr>
+                            <td>LD-025</td>
+                            <td>Budi Santoso</td>
+                            <td>10.00</td>
+                            <td>Rp60.000</td>
+                            <td>Rp60.000</td>
+                            <td>Tunai</td>
+                            <td>Lunas</td>
+                        </tr>
+                        <tr>
+                            <td>LD-024</td>
+                            <td>Risa Putri</td>
+                            <td></td>
+                            <td>Rp24.000</td>
+                            <td>Rp0</td>
+                            <td></td>
+                            <td>Belum lunas</td>
+                        </tr>
+                        <tr>
+                            <td>LD-023</td>
+                            <td>Andi Wijaya</td>
+                            <td>09.00</td>
+                            <td>Rp48.000</td>
+                            <td>Rp48.000</td>
+                            <td>Transfer</td>
+                            <td>Lunas</td>
+                        </tr>
+                        <tr>
+                            <td>LD-022</td>
+                            <td>Dewi Lestari</td>
+                            <td>08.30</td>
+                            <td>Rp48.000</td>
+                            <td>Rp48.000</td>
+                            <td>Transfer</td>
+                            <td>Lunas</td>
+                        </tr>
+                        <tr>
+                            <td>LD-021</td>
+                            <td>Agus Salim</td>
+                            <td>08.00</td>
+                            <td>Rp20.000</td>
+                            <td>Rp20.000</td>
+                            <td>Tunai</td>
+                            <td>Lunas</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="table-summary-footer">
+                    <span>6 pesanan 4 pembayaran diterima</span>
+                    <span class="total-bold-text">Total pemasukan: Rp176.000</span>
+                </div>
+            </section>
+
+            <!-- SECTION 4: AREA KOTAK BAWAH (2 KOLOM BERDAMPINGAN SAMA PANJANG) -->
+            <div class="bottom-split-layout">
+                
+                <!-- Kotak Kiri Bawah: Ringkasan Pesanan -->
+                <div class="form-section flex-equal">
+                    <h3>Ringkasan pesanan</h3>
+                    <div class="summary-list-rows">
+                        <div class="list-item-row">
+                            <span>Pesanan masuk / berat</span>
+                            <strong>6 pesanan / 26 kg</strong>
+                        </div>
+                        <div class="list-item-row">
+                            <span>Pekerjaan aktif</span>
+                            <strong>5 pesanan</strong>
+                        </div>
+                        <div class="list-item-row">
+                            <span>Selesai dan diambil</span>
+                            <strong>1 pesanan</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Kotak Kanan Bawah: Rekonsiliasi Pembayaran -->
+                <div class="form-section flex-equal">
+                    <h3>Rekonsiliasi pembayaran</h3>
+                    <div class="summary-list-rows">
+                        <div class="list-item-row">
+                            <span>Lunas</span>
+                            <strong>4 pesanan - Rp176.000</strong>
+                        </div>
+                        <div class="list-item-row">
+                            <span>Belum lunas</span>
+                            <strong>2 pesanan - Rp56.000</strong>
+                        </div>
+                        <p class="reconciliation-notes">
+                            Rp176.000 + Rp56.000 = Rp232.000 total tagihan. Draf LD-027 tidak disertakan dalam laporan.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Hak Cipta -->
+            <footer class="page-footer">
+                <span>Wireframe operasional · Tampilan statis</span>
+                <span>Data contoh: 19 Oktober 2026</span>
+            </footer>
+        </main>
+    </div>
+
+    <script src="laporan_pemilik.js"></script>
+</body>
+</html>

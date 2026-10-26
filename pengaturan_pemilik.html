@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>08/ Pengaturan Pemilik</title>
+    <link rel="stylesheet" href="pengaturan_pemilik.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- SIDEBAR (Kiri) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <h2>Laundry Kiloan</h2>
+                    <p>Aplikasi Manajemen Laundry Kiloan Sederhana</p>
+                </div>
+                
+                <nav class="menu-group">
+                    <span class="menu-label">PEMILIK</span>
+                    <ul>
+                        <li><a href="dashboard_pemilik.html">Dashboard</a></li>
+                        <li><a href="laporan_pemilik.html">Laporan</a></li>
+                        <li class="active"><a href="pengaturan_pemilik.html">Pengaturan</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="menu-label">Hak akses</span>
+                <p>Pantau usaha, lihat laporan, serta kelola tarif dan akun petugas.</p>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA (Kanan) -->
+        <main class="main-content">
+            <!-- Header Atas -->
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>08/ Pengaturan Pemilik</h1>
+                    <p class="date-text">Kelola layanan, tarif per kilogram, dan akun Petugas Laundry. Hanya dapat diakses Pemilik.</p>
+                </div>
+                <div class="header-actions">
+                    <span class="user-name">Ibu Maya (Pemilik)</span>
+                    <button class="btn-logout" type="button" onclick="window.location.href='index.html'">Keluar</button>
+                </div>
+            </header>
+
+            <!-- BLOCK ATAS: LAYANAN DAN TARIF -->
+            <div class="settings-grid-layout">
+                <!-- Kolom Kiri: Tabel Layanan -->
+                <div class="left-form-block">
+                    <div class="form-section">
+                        <h3>Layanan dan tarif</h3>
+                        <p class="section-desc">Tarif berlaku per kilogram; semua layanan pada contoh ini aktif.</p>
+                        
+                        <table class="settings-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Layanan</th>
+                                    <th>Tarif / kg</th>
+                                    <th>Durasi</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cuci reguler</td>
+                                    <td>Rp8.000</td>
+                                    <td>2 hari</td>
+                                    <td>Aktif</td>
+                                    <td><button type="button" class="btn-table-action">Ubah</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Cuci ekspres</td>
+                                    <td>Rp12.000</td>
+                                    <td>1 hari</td>
+                                    <td>Aktif</td>
+                                    <td><button type="button" class="btn-table-action">Ubah</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Setrika saja</td>
+                                    <td>Rp5.000</td>
+                                    <td>1 hari</td>
+                                    <td>Aktif</td>
+                                    <td><button type="button" class="btn-table-action">Ubah</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <button type="button" class="btn-outline-add">+ Tambah layanan</button>
+                    </div>
+
+                    <div class="hint-info-box">
+                        <p>Cuci reguler dan Cuci ekspres mencakup cuci, kering, dan setrika. Setrika saja melewati tahap Dicuci dan Dikeringkan. Perubahan tarif hanya berlaku untuk pesanan baru; tarif pesanan lama tetap.</p>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Form Ubah Layanan -->
+                <div class="right-form-block">
+                    <div class="form-section">
+                        <h3>Ubah layanan</h3>
+                        <p class="section-desc">Layanan dipilih: Cuci reguler</p>
+                        
+                        <form id="serviceForm">
+                            <div class="input-group">
+                                <label>Nama layanan *</label>
+                                <input type="text" value="Cuci reguler" required>
+                            </div>
+                            
+                            <div class="form-row-two">
+                                <div class="input-group">
+                                    <label>Tarif per kg (Rp) *</label>
+                                    <input type="text" value="8.000" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Durasi (hari)</label>
+                                    <input type="text" value="2">
+                                </div>
+                            </div>
+                            
+                            <div class="input-group">
+                                <label>Status layanan</label>
+                                <select>
+                                    <option selected>Aktif</option>
+                                    <option>Nonaktif</option>
+                                </select>
+                            </div>
+                            
+                            <button type="submit" class="btn-black-submit">Simpan layanan</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BLOCK BAWAH: AKUN PETUGAS -->
+            <div class="settings-grid-layout">
+                <!-- Kolom Kiri: Tabel Petugas -->
+                <div class="left-form-block">
+                    <div class="form-section">
+                        <h3>Akun petugas</h3>
+                        <p class="section-desc">Kelola akun operasional. Akun Pemilik tidak dibuat dari formulir ini.</p>
+                        
+                        <table class="settings-data-table">
+                            <thead>
+                                <tr>
+                                    <th>Nama</th>
+                                    <th>Pengguna</th>
+                                    <th>Peran</th>
+                                    <th>Status</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Nadia Putri</td>
+                                    <td>nadia</td>
+                                    <td>Petugas Laundry</td>
+                                    <td>Aktif</td>
+                                    <td><button type="button" class="btn-table-action">Ubah</button></td>
+                                </tr>
+                                <tr>
+                                    <td>Rudi Saputra</td>
+                                    <td>rudi</td>
+                                    <td>Petugas Laundry</td>
+                                    <td>Aktif</td>
+                                    <td><button type="button" class="btn-table-action">Ubah</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <button type="button" class="btn-outline-add">+ Tambah petugas</button>
+                    </div>
+
+                    <div class="hint-info-box">
+                        <p>Akun nonaktif tidak dapat masuk, tetapi riwayat pesanan tetap tersimpan. Petugas tidak memiliki akses ke laporan usaha, perubahan tarif, atau pengelolaan akun.</p>
+                    </div>
+                </div>
+
+                <!-- Kolom Kanan: Form Ubah Akun Petugas -->
+                <div class="right-form-block">
+                    <div class="form-section">
+                        <h3>Ubah akun petugas</h3>
+                        <p class="section-desc">Akun dipilih: nadia</p>
+                        
+                        <form id="accountForm">
+                            <div class="input-group">
+                                <label>Nama lengkap *</label>
+                                <input type="text" value="Nadia Putri" required>
+                            </div>
+                            
+                            <div class="form-row-two">
+                                <div class="input-group">
+                                    <label>Nama pengguna *</label>
+                                    <input type="text" value="nadia" required>
+                                </div>
+                                <div class="input-group">
+                                    <label>Status akun</label>
+                                    <select>
+                                        <option selected>Aktif</option>
+                                        <option>Nonaktif</option>
+                                    </select>

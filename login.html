@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Aplikasi Manajemen Laundry</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Bagian Kiri: Informasi Aplikasi -->
+        <div class="info-section">
+            <p class="meta-text">WIREFRAME: DESKTOP - AKSES BERDASARKAN PERAN</p>
+            <h1>Aplikasi Manajemen<br>Laundry Kiloan Sederhana</h1>
+            <p class="description">Kelola pesanan harian dan pantau usaha dalam satu aplikasi dengan dua peran yang berbeda.</p>
+
+            <div class="role-desc">
+                <h3>Petugas Laundry</h3>
+                <p>Mencatat pesanan, memperbarui proses laundry, menerima pembayaran, dan mencetak nota.</p>
+            </div>
+
+            <div class="role-desc">
+                <h3>Pemilik</h3>
+                <p>Memantau pendapatan dan pesanan, melihat laporan, serta mengelola layanan, tarif, dan akun petugas.</p>
+            </div>
+            
+            <p class="footer-text">Tampilan statis. Hanya dua peran: Petugas Laundry dan Pemilik.</p>
+        </div>
+
+        <!-- Bagian Kanan: Form Login -->
+        <div class="login-section">
+            <div class="login-card">
+                <h2>Masuk ke aplikasi</h2>
+                <p class="sub-label">Pilih peran, lalu gunakan akun yang telah terdaftar.</p>
+
+                <form id="loginForm">
+                    <!-- Pilihan Peran -->
+                    <label class="input-label">Masuk sebagai</label>
+                    <div class="role-selector">
+                        <label class="role-option">
+                            <input type="radio" name="role" value="Petugas Laundry" checked>
+                            <span class="custom-radio"></span>
+                            Petugas Laundry
+                        </label>
+                        <label class="role-option">
+                            <input type="radio" name="role" value="Pemilik">
+                            <span class="custom-radio"></span>
+                            Pemilik
+                        </label>
+                    </div>
+
+                    <!-- Input Nama Pengguna -->
+                    <div class="input-group">
+                        <label for="username">Nama pengguna</label>
+                        <input type="text" id="username" value="nadia" required>
+                    </div>
+
+                    <!-- Input Kata Sandi -->
+                    <div class="input-group">
+                        <label for="password">Kata sandi</label>
+                        <input type="password" id="password" value="........" required>
+                    </div>
+
+                    <!-- Tombol Submit -->
+                    <button type="submit" id="submitBtn">Masuk sebagai Petugas Laundry</button>
+                </form>
+
+                <p class="notice-text">
+                    Peran harus sesuai dengan akun. Hubungi Pemilik jika akun petugas belum tersedia atau kata sandi perlu diatur ulang.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIKA JAVASCRIPT UNTUK PENGALIHAN PERAN -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const roleRadios = document.querySelectorAll('input[name="role"]');
+            const submitBtn = document.getElementById('submitBtn');
+            const loginForm = document.getElementById('loginForm');
+
+            // Mengubah teks tombol secara dinamis mengikuti peran yang dipilih
+            roleRadios.forEach(radio => {
+                radio.addEventListener('change', function() {
+                    submitBtn.textContent = `Masuk sebagai ${this.value}`;
+                });
+            });
+
+            // Eksekusi pengalihan halaman saat tombol masuk ditekan
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault(); // Mencegah reload halaman bawaan form
+                
+                // Mengambil nilai peran yang sedang aktif dipilih
+                const selectedRole = document.querySelector('input[name="role"]:checked').value;
+
+                if (selectedRole === 'Petugas Laundry') {
+                    // Jika memilih petugas, arahkan ke dashboard petugas
+                    window.location.href = 'dashboard_petugas.html';
+                } else if (selectedRole === 'Pemilik') {
+                    // Jika memilih pemilik, arahkan ke dashboard pemilik
+                    window.location.href = 'dashboard_pemilik.html';
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

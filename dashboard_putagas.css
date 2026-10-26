@@ -1,0 +1,383 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f9;
+    color: #333;
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #eef2f5;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.brand h2 {
+    font-size: 20px;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.brand p {
+    font-size: 11px;
+    color: #777;
+    line-height: 1.4;
+}
+
+.menu-group {
+    margin-top: 40px;
+    flex-grow: 1;
+}
+
+.menu-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    color: #999;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.menu-group ul {
+    list-style: none;
+}
+
+.menu-group li {
+    margin-bottom: 8px;
+}
+
+.menu-group a {
+    display: block;
+    padding: 10px 12px;
+    color: #555;
+    text-decoration: none;
+    font-size: 14px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.menu-group li.active a, .menu-group a:hover {
+    background-color: #f0f4f8;
+    color: #2b6cb0;
+    font-weight: 600;
+}
+
+.sidebar-footer p {
+    font-size: 12px;
+    color: #777;
+    line-height: 1.4;
+    margin-top: 5px;
+}
+
+/* --- KONTEN UTAMA --- */
+.main-content {
+    flex: 1;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* Header */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eef2f5;
+    padding-bottom: 20px;
+}
+
+.main-header h1 {
+    font-size: 24px;
+    color: #1a1a1a;
+}
+
+.date-text {
+    font-size: 13px;
+    color: #666;
+    margin-top: 4px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.user-name {
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.btn-logout {
+    padding: 6px 12px;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.btn-logout:hover {
+    background: #f5f5f5;
+}
+
+/* Grid Kartu Statistik */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #eef2f5;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.stat-card h3 {
+    font-size: 13px;
+    color: #666;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+}
+
+.stat-sub {
+    font-size: 12px;
+    color: #888;
+}
+
+.alert-card {
+    border-left: 4px solid #e53e3e;
+}
+
+/* Tata Letak Konten Bawah */
+.content-layout {
+    display: flex;
+    flex-direction: column; /* Mengatur susunan agar tabel di atas, panel di bawah */
+    gap: 25px;
+    width: 100%;
+}
+table-container {
+    width: 100%; /* Memastikan tabel memenuhi lebar penuh */
+}
+
+.bottom-panels-row {
+    display: flex;
+    gap: 25px;
+    width: 100%;
+}
+
+.flex-1 {
+    flex: 1; /* Membagi ukuran kedua panel bawah menjadi sama rata (50% - 50%) */
+}
+
+.table-container {
+    flex: 2;
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #eef2f5;
+    padding: 20px;
+}
+
+.table-header {
+    margin-bottom: 20px;
+}
+
+.table-header h2 {
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.table-header p {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Tabel */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+th, td {
+    padding: 12px 10px;
+    text-align: left;
+    border-bottom: 1px solid #eef2f5;
+}
+
+th {
+    background-color: #fafafa;
+    color: #555;
+    font-weight: 600;
+}
+
+/* Badges / Label Status */
+.badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge.diterima { background: #edf2f7; color: #4a5568; }
+.badge.dicuci { background: #ebf8ff; color: #2b6cb0; }
+.badge.dikeringkan { background: #feebc8; color: #c05621; }
+.badge.disetrika { background: #e2e8f0; color: #4a5568; }
+.badge.lunas { background: #c6f6d5; color: #22543d; }
+.badge.belum { background: #fed7d7; color: #9b2c2c; }
+
+.btn-detail {
+    padding: 4px 8px;
+    background: #1a1a1a;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.table-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.showing-text {
+    font-size: 12px;
+    color: #777;
+}
+
+.btn-secondary {
+    padding: 8px 14px;
+    background: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+/* Panel Samping Kanan */
+.side-panels {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.panel-card {
+    background: #fff;
+    border-radius: 6px;
+    border: 1px solid #eef2f5;
+    padding: 20px;
+}
+
+.panel-card h3 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.panel-desc {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.action-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-item {
+    border-left: 3px solid #3182ce;
+    padding-left: 10px;
+    font-size: 13px;
+}
+
+.action-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #3182ce;
+}
+
+.action-details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2px;
+}
+
+.price-tag {
+    font-weight: 600;
+}
+
+.total-alert {
+    font-size: 12px;
+    margin-top: 8px;
+    color: #555;
+}
+
+/* Daftar Ringkasan */
+.summary-list {
+    list-style: none;
+    font-size: 13px;
+}
+
+.summary-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px dashed #edf2f7;
+}
+
+.summary-list li.total-row {
+    border-bottom: none;
+    font-size: 11px;
+    color: #777;
+    margin-top: 5px;
+}
+
+.page-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #aaa;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #eef2f5;
+}
+
+/* Responsif Tablet / Mobile */
+@media (max-width: 1024px) {
+    .stats-grid { grid-template-columns: repeat(2, 1fr); }
+    .content-layout { flex-direction: column; }
+    .side-panels { width: 100%; }
+}

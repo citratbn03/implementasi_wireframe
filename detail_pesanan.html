@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05/ Detail Pesanan Petugas</title>
+    <link rel="stylesheet" href="detail_pesanan.css">
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <!-- SIDEBAR (Kiri) -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <div class="brand">
+                    <h2>Laundry Kiloan</h2>
+                    <p>Aplikasi Manajemen Laundry Kiloan Sederhana</p>
+                </div>
+                
+                <nav class="menu-group">
+                    <span class="menu-label">PETUGAS LAUNDRY</span>
+                    <ul>
+                        <li><a href="dashboard_petugas.html">Dashboard</a></li>
+                        <li><a href="pesanan_baru.html">Pesanan baru</a></li>
+                        <li><a href="daftar_pesanan.html">Daftar pesanan</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sidebar-footer">
+                <span class="menu-label">Hak akses</span>
+                <p>Catat pesanan, perbarui proses, terima pembayaran, dan cetak nota.</p>
+            </div>
+        </aside>
+
+        <!-- KONTEN UTAMA (Kanan) -->
+        <main class="main-content">
+            <!-- Header Atas -->
+            <header class="main-header">
+                <div class="header-title">
+                    <h1>05/ Detail Pesanan Petugas</h1>
+                    <p class="date-text">Daftar pesanan / LD-025 Diterima 19 Oktober 2026, 10.00 oleh Nadia</p>
+                </div>
+                <div class="header-actions">
+                    <button class="btn-back-list" type="button" onclick="window.location.href='daftar_pesanan.html'">Kembali ke daftar</button>
+                    <button class="btn-logout" type="button" onclick="window.location.href='index.html'">Keluar</button>
+                </div>
+            </header>
+
+            <!-- TAMPILAN LAYOUT GRID UTAMA (Kiri: Isian Form, Kanan: Ringkasan Nota Kertas) -->
+            <div class="detail-main-layout">
+                
+                <!-- KOLOM KIRI -->
+                <div class="left-info-column">
+                    
+                    <!-- Box Utama: Judul Akun Transaksi & Indikator Jalur Timeline -->
+                    <div class="form-section">
+                        <div class="title-meta-row">
+                            <h2>LD-025 Budi Santoso</h2>
+                            <p>Layanan Cuci ekspres Estimasi selesai: 20 Oktober 2026, 10.00</p>
+                        </div>
+                        
+                        <div class="timeline-grid">
+                            <div class="timeline-step finished">
+                                <span class="step-check">• Diterima</span>
+                                <span class="step-time">19 Okt 10.00</span>
+                            </div>
+                            <div class="timeline-step active">
+                                <span class="step-check">⟳ Dicuci</span>
+                                <span class="step-time">19 Okt - 10.15</span>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="step-check">☐ Dikeringkan</span>
+                                <span class="step-time">Belum diproses</span>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="step-check">☐ Disetrika</span>
+                                <span class="step-time">Belum diproses</span>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="step-check">☐ Siap Diambil</span>
+                                <span class="step-time">Belum diproses</span>
+                            </div>
+                            <div class="timeline-step">
+                                <span class="step-check">☐ Selesai</span>
+                                <span class="step-time">Belum diproses</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Box 1: Pelanggan dan Cucian -->
+                    <div class="form-section">
+                        <h3>Pelanggan dan cucian</h3>
+                        <div class="info-grid-two">
+                            <div class="info-block">
+                                <p>Budi Santoso</p>
+                                <p>0813 4567 8901</p>
+                                <p>Jl. Kenanga No. 8</p>
+                            </div>
+                            <div class="info-block text-right">
+                                <p>Berat: 5 kg</p>
+                                <p>Layanan: Cuci ekspres</p>
+                                <p>Durasi: 1 hari</p>
+                            </div>
+                        </div>
+                        <div class="internal-notes-box">
+                            <p>Catatan cucian: pisahkan pakaian berwarna. Tidak ada biaya tambahan.</p>
+                        </div>
+                    </div>
+
+                    <!-- Box 2: Perbarui Proses -->
+                    <div class="form-section">
+                        <h3>Perbarui proses</h3>
+                        <p class="section-desc">Status saat ini: Dicuci. Lanjutkan ke tahap berikutnya setelah pekerjaan selesai.</p>
+                        
+                        <form id="updateStatusForm" class="inline-action-form">
+                            <div class="select-group">
+                                <label>Status berikutnya</label>
+                                <select id="nextStatusSelect">
+                                    <option value="Dikeringkan">Dikeringkan y</option>
+                                    <option value="Disetrika">Disetrika</option>
+                                    <option value="Siap Diambil">Siap Diambil</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn-black-submit">Simpan status</button>
+                        </form>
+                    </div>
+
+                    <!-- Box 3: Biaya dan Pembayaran -->
+                    <div class="form-section">
+                        <h3>Biaya dan pembayaran</h3>
+                        <table class="billing-table">
+                            <thead>
+                                <tr>
+                                    <th>Layanan</th>
+                                    <th>Berat</th>
+                                    <th>Tarif / kg</th>
+                                    <th class="text-right">Subtotal</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Cuci ekspres</td>
+                                    <td>5 kg</td>
+                                    <td>Rp12.000</td>
+                                    <td class="text-right">Rp60.000</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="payment-grid-layout">
+                            <div class="payment-left-rows">
+                                <div class="p-row">
+                                    <span>Biaya tambahan</span>
+                                    <span>R 0</span>
+                                </div>
+                                <div class="p-row font-bold">
+                                    <span>Total biaya</span>
+                                    <span>Rp60.000</span>
+                                </div>
+                                <div class="p-row">
+                                    <span>Sisa tagihan</span>
+                                    <span>R 0</span>
+                                </div>
+                            </div>
+                            <div class="payment-right-stamp">
+                                <p class="stamp-status">Lunas</p>
+                                <p class="stamp-detail">Rp60.000 - Tunai</p>
+                                <p class="stamp-meta">19 Oktober 2026, 10.00 Petugas: Nadia | BYR-025</p>
+                            </div>
+                        </div>
+                        <p class="footer-hint-text">Tidak ada sisa pembayaran pada pesanan ini.</p>
+                    </div>
+
+                </div>
+
+                <!-- KOLOM KANAN (RINGKASAN NOTA KERTAS FISIK) -->
+                <div class="form-summary-column">
+                    
+                    <div class="summary-panel">
+                        <h3>Ringkasan nota</h3>
+                        <div class="invoice-brand">
+                            <h4>Laundry Kiloan</h4>
+                            <p>Nota LD-025 · 19 Oktober 2026</p>
+                        </div>
+                        
+                        <table class="summary-table">
+                            <tr>
+                                <td>Pelanggan</td>
+                                <td class="text-right">Budi Santoso</td>
+                            </tr>
+                            <tr>
+                                <td>Layanan</td>
+                                <td class="text-right">Cuci ekspres</td>
+                            </tr>
+                            <tr>
+                                <td>Perhitungan</td>
+                                <td class="text-right">5 kg x Rp12.000</td>
+                            </tr>
+                            <tr>
+                                <td>Tambahan</td>
+                                <td class="text-right">Rp0</td>
+                            </tr>
+                            <tr class="total-row">
